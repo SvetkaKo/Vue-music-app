@@ -1,10 +1,6 @@
 <template>
   <!-- Auth Modal -->
-  <div
-    class="fixed z-10 inset-0 overflow-y-auto"
-    :class="{ hidden: !authModalShow }"
-    id="modal"
-  >
+  <div class="fixed z-10 inset-0 overflow-y-auto" :class="{ hidden: !authModalShow }" id="modal">
     <div
       class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
     >
@@ -13,9 +9,7 @@
       </div>
 
       <!-- This element is to trick the browser into centering the modal contents. -->
-      <span class="hidden sm:inline-block sm:align-top sm:h-screen"
-        >&#8203;</span
-      >
+      <span class="hidden sm:inline-block sm:align-top sm:h-screen">&#8203;</span>
 
       <div
         class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
@@ -26,10 +20,7 @@
           <div class="flex justify-between items-center pb-4">
             <p class="text-2xl font-bold">Your Account</p>
             <!-- Modal Close Button -->
-            <div
-              class="modal-close cursor-pointer z-50"
-              @click.prevent="toggleAuthModal"
-            >
+            <div class="modal-close cursor-pointer z-50" @click.prevent="toggleAuthModal">
               <i class="fas fa-times"></i>
             </div>
           </div>
@@ -89,7 +80,9 @@ export default {
   },
 
   computed: {
-    ...mapState(['authModalShow']),
+    ...mapState({
+      authModalShow: (state) => state.auth.authModalShow,
+    }),
     // mapState replace mapGetters and I don't need to include geeters component in store/index.js,
 
     // mapGetters makes it easier - return value from store/index.js
