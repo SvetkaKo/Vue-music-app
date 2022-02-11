@@ -2,7 +2,7 @@
 node_modules
 
 
-/tests/
+
 
 /src/templates
 /src/includes/firebase.js
@@ -26,3 +26,5 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+.vercel
